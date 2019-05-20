@@ -5,7 +5,9 @@ router.get("/", async (req, res) => {
   try {
     const users = await Users.find();
     res.status(200).json(users);
-  } catch (error) {}
+  } catch (error) {
+    res.json({ message: "ERROR" });
+  }
 });
 
 module.exports = router;
